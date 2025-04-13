@@ -85,6 +85,14 @@
                 <div data-i18n='Layouts'>Quản lý đơn hàng</div>
             </a>
         </li>
-
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Khác</span>
+        </li>
+        <li class='menu-item'>
+            <a href='{{route('listContact')}}' class='menu-link'>
+                <i class='menu-icon tf-icons bx bx-category-alt'></i>
+                <div data-i18n='Layouts'>Danh sách tin nhắn liên hệ</div>
+            </a>
+        </li>
     </ul>
 </aside>

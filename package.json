@@ -13,7 +13,7 @@
         "CreatePass": "echo bcrypt('12345')",
         "CreateMigration": "php artisan make:migration payment_histories",
         "makeMigration": "php artisan migrate",
-        "makeOnlyMigration": "php artisan migrate --path=database/migrations/2025_02_16_074012_payment_histories.php",
+        "makeOnlyMigration": "php artisan migrate --path=database/migrations/2025_04_12_110609_create_feedbacks_table.php",
         "makeFormRequest": "php artisan make:request Menu/CreateFormRequest",
         "list": "php artisan route:list",
         "storage": "php artisan storage:link",

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\MainCartController;
 use App\Http\Controllers\MainPostController;
 use App\Http\Controllers\admin\HomeController;
@@ -12,7 +14,6 @@ use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\MainProductController;
 use App\Http\Controllers\MainCheckoutController;
-use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\admin\AddressController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -51,6 +52,7 @@ Auth::routes();
 Route::get('/about',[PageController::class,'about']);
 Route::get('/contact',[PageController::class,'contact']);
 Route::get('/search',[App\Http\Controllers\HomeController::class,'search'])->name('search');
+Route::post('/contact', [FeedbackController::class, 'store'])->name('contact.store');
 
 Route::middleware(['auth'])->group(function() {
     
@@ -110,6 +112,8 @@ Route::middleware(['auth'])->group(function() {
             //        Orders
             Route::resource('orders', OrderController::class);
             Route::post('/orders/update-status', [OrderController::class, 'updateStatus'])->name('orders.updateStatus');
+
+            Route::get('/contact',[App\Http\Controllers\admin\FeedbackController::class,'index'])->name('listContact');
 
         });
     });
